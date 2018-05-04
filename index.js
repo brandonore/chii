@@ -5,7 +5,7 @@ const { promisify } = require('util');
 const readdir = promisify(fs.readdir);
 const dir = require('node-dir');
 
-// assign new discord client
+// assign new discord client to bot const
 const bot = new Discord.Client({disableEveryone: true});
 bot.commands = new Discord.Collection();
 
