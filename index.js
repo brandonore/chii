@@ -1,4 +1,4 @@
-const botconfig = require('./botconfig.json');
+const config = require('./config.json');
 const Discord = require('discord.js');
 const fs = require('fs');
 const { promisify } = require('util');
@@ -39,7 +39,7 @@ bot.on('message', async(message) => {
     if(message.channel.type === 'dm') return;
 
     // setup command prefix and args based off message content
-    let prefix = botconfig.prefix;
+    let prefix = config.prefix;
     let messageArray = message.content.split(' ');
     let cmd = messageArray[0];
     let args = messageArray.slice(1);
@@ -48,5 +48,5 @@ bot.on('message', async(message) => {
     if(commandFile) commandFile.run(bot, message, args);
 });
 
-bot.login(botconfig.token);
+bot.login(config.token);
 loadCommands();
