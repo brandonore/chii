@@ -1,0 +1,19 @@
+{
+  "name": "chii",
+  "version": "1.0.0",
+  "description": "General purpose Discord bot!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "Brandon Ore",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^11.3.2",
+    "ms": "^2.1.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.3"
+  }
+}
