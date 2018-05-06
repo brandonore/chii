@@ -4,8 +4,8 @@ const ms = require('ms');
 module.exports.run = async(bot, message, args) => {
     let toMute = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     if(!toMute) return message.reply("Couldn't find the specified user");
-    if(toMute.hasPermission('MANAGE_MESSAGES')) message.reply("Can't mute the specified user!");
-    let muteRole = message.guild.roles.find(`name`, 'muted');
+    if(toMute.hasPermission('MANAGE_MESSAGES')) return message.reply('You cannot mute a user with a higher or equal role to you!');
+    let muteRole = message.guild.roles.find(`name`, 'Muted');
     // start createRole
     if(!muteRole) {
         try {
