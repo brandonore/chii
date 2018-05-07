@@ -17,7 +17,7 @@ module.exports.run = async(bot, message, args) => {
     let reportschannel = message.guild.channels.find(`name`, 'reports');
     if(!reportschannel) message.channel.send('Could not find the reports channel.');
 
-    message.delete().catch(O_o=>{});
+    message.delete().catch(() => {});
     reportschannel.send(embed);
 }
 

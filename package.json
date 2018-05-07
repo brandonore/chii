@@ -13,9 +13,10 @@
     "discord.js": "^11.3.2",
     "ms": "^2.1.1",
     "node-dir": "^0.1.17",
+    "superagent": "^3.8.3",
     "util": "^0.10.3"
   },
   "devDependencies": {
-    "nodemon": "^1.17.3"
+    "nodemon": "^1.17.4"
   }
 }
