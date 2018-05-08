@@ -2,6 +2,7 @@ const Discord = require('discord.js');
 const request = require('superagent');
 
 module.exports.run = async(bot, message, args) => {
+    // grab breed from args
     let [breed, breed2] = [args[0], args[1]];
 
     switch(true) {
@@ -19,7 +20,6 @@ module.exports.run = async(bot, message, args) => {
             });
             break;
         case args.length === 1:
-            console.log(args);
             request.get(`https://dog.ceo/api/breed/${breed}/images/random`)
             .then((res) => {
             let embed = new Discord.RichEmbed()
@@ -42,6 +42,9 @@ module.exports.run = async(bot, message, args) => {
             .catch((err) => {
                 message.reply(`I was unable to load the picture due to the following error: '${err.message}'.`);
             });
+            break;
+        case args.length >= 3:
+            message.reply(`Sorry, I wasn't able to find that breed. Please keep the breed to 1-2 words.`);
             break;
     }
 }

@@ -21,8 +21,8 @@ const loadCommands = async() => {
             if(!props) return;
             if(!props.help.name) props.help.name = file.split('.')[1];
             bot.commands.set(props.help.name, props);
-            console.log(`Command loaded: ${props.help.name}`);
         }
+        console.log(`Commands loaded from: ${folder}`);
     }
 }
 
